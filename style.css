@@ -1,0 +1,384 @@
+/* font */
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap");
+:root {
+  --secondaryC: rgb(255, 145, 0);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: Arial, Helvetica, sans-serif;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+nav {
+  display: flex;
+  background-color: var(--primaryC);
+  padding: 15px;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 2px 10px grey;
+}
+nav .logo {
+  font-family: "Playwrite IT Moderna", cursive;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: var(--secondaryC);
+  text-shadow: 0.5px 0.5px 1px black, -0.5px -0.5px 1px rgb(255, 255, 255);
+  animation: fade-down 1s;
+}
+
+/* Menu-btn */
+nav .menu-btn {
+  width: 35px;
+  height: 20px;
+  display: none;
+  cursor: pointer;
+  justify-content: center;
+  gap: 5px;
+  flex-direction: column;
+  align-items: center;
+  animation: fade-down 1s;
+}
+.menu-btn span {
+  background-color: antiquewhite;
+  width: 100%;
+  height: 3px;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+.menu-btn span.line2 {
+  width: 80%;
+}
+.show span.line1 {
+  transform: translateY(8px) rotate(-45deg);
+}
+.show span.line3 {
+  transform: translateY(-8px) rotate(45deg);
+}
+.show span.line2 {
+  transform: translatex(2px) rotate(180deg);
+  width: 0;
+}
+/*List*/
+nav #list {
+  display: flex;
+  gap: 20px;
+}
+nav #list a {
+  animation: fade-down 1s;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: black;
+  transition: all 0.1s;
+}
+nav #list a:hover {
+  border-bottom: 3px solid black;
+}
+/* Home */
+.home {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: -70px;
+  padding-top: 75px;
+  background-image: url(img/home/Bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  mask-image: linear-gradient(var(--secondaryC), var(--secondaryC), var(--secondaryC), var(--secondaryC), var(--secondaryC), rgba(255, 0, 0, 0.103));
+  height: 100vh;
+  overflow: hidden;
+}
+.container1 :where(h1, h2, p) {
+  font-family: sans-serif;
+  margin: 10px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+.container1 button {
+  padding: 15px;
+  font-size: 1rem;
+  border: none;
+  font-weight: bold;
+  color: orange;
+  background-color: white;
+  border: 2px solid orange;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.6s ease;
+}
+.container1 button:hover {
+  color: white;
+  background-color: orange;
+}
+.container1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 174, 0, 0.205);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  margin: 1rem;
+  margin-left: 3rem;
+  animation: fade-right 1s;
+}
+.containers1 {
+  width: 100%;
+  max-width: 20rem;
+  min-width: 16rem;
+}
+.container2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fade-left 1s;
+}
+.container2 img {
+  width: 100%;
+  max-width: 20rem;
+  min-width: 10rem;
+  transition: 0.5s ease;
+}
+.container2 img:hover {
+  transform: scale(1.2);
+}
+/* menu */
+.menu {
+  background: white;
+  padding-top: 2rem;
+}
+.menu h1 {
+  text-align: center;
+  color: var(--secondaryC);
+  font-family: "Playwrite IT Moderna", cursive;
+  margin: 2.5rem;
+}
+.item {
+  display: flex;
+  margin: 1rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+.item .card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 300px;
+  height: 200px;
+  border-radius: 12px;
+  transition: all 0.5s;
+  background: var(--secondaryC);
+}
+.item .card:hover {
+  height: 300px;
+}
+.item .card .Imgbox {
+  position: absolute;
+  width: 260px;
+  height: 140px;
+  top: 10px;
+  border-radius: 12px;
+  transition: 0.5s;
+  background: black;
+  overflow: hidden;
+}
+.item .card:hover .Imgbox {
+  top: -40px;
+  scale: 0.75;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+.item .card .Imgbox img {
+  width: 100%;
+  height: fit-content;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+.item .card .content {
+  position: absolute;
+  height: 35px;
+  width: 100%;
+  text-align: center;
+  top: 155px;
+  overflow: hidden;
+  transition: 0.5s;
+  padding: 10px;
+}
+.item .card:hover .content {
+  height: 190px;
+  top: 100px;
+}
+.item :where(h3, p) {
+  color: white;
+  font-family: "Playwrite IT Moderna", cursive;
+}
+/* about */
+.about {
+  height: 100vh;
+  background-color: var(--secondaryC);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-about {
+  margin: 1.5rem;
+  width: 90vh;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  z-index: 2;
+}
+.container-about :where(h1, h2) {
+  text-align: center;
+  margin: 1rem;
+}
+/*Pattern*/
+.pattern1 {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  background-color: white;
+  border-radius: 60% 40% 83% 17% / 82% 52% 48% 18%;
+  top: -100px;
+  left: -150px;
+  animation: pattern 10s linear infinite;
+  filter: blur(2px);
+}
+.pattern2 {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  border: 5px solid white;
+  border-radius: 91% 9% 11% 89% / 87% 82% 18% 13%;
+  bottom: -200px;
+  right: -200px;
+  animation: pattern 15s linear infinite;
+}
+.pattern2 .pattern2-small {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  border: 5px solid white;
+  border-radius: 85% 15% 85% 15% / 37% 76% 24% 63%;
+  bottom: -300px;
+  right: -300px;
+  animation: pattern 5s linear infinite;
+  filter: blur(5px);
+}
+@keyframes pattern {
+  0% {
+    transform: rotatez(0deg);
+  }
+  100% {
+    transform: rotatez(360deg);
+  }
+}
+/* animation */
+@keyframes fade-right {
+  0% {
+    opacity: 0;
+    transform: translatex(-30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes fade-left {
+  0% {
+    opacity: 0;
+    transform: translatex(30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+/* respontive */
+@media screen and (max-width: 856px) {
+  .container2 {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 556px) {
+  nav .logo,
+  nav #list a {
+    color: white;
+  }
+  nav .menu-btn {
+    display: flex;
+  }
+  nav {
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: var(--secondaryC);
+  }
+  nav ul.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+  nav ul {
+    top: 77px;
+    opacity: 1;
+  }
+
+  #list {
+    transition: all 0.5s;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    background-color: var(--secondaryC);
+    padding: 30px 0;
+    width: 100%;
+  }
+  nav #list a:hover {
+    border-bottom: 2px solid white;
+  }
+  /* Home */
+  .home {
+    flex-wrap: wrap;
+    height: 100vh;
+    font-size: 80%;
+    overflow: hidden;
+    gap: 0rem;
+  }
+  .container2 {
+    width: 10%;
+  }
+}
